@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BEEC795CE130BEB46EB21A58ABC678A915951772" : 0,
+    "BAE1F7A899474A2C4487507BEBB81EB1B0FF4AC2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2B3A00A4-018A-4308-BDDC-353374A8BCBF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BEEC795CE130BEB46EB21A58ABC678A915951772" : "",
+    "BAE1F7A899474A2C4487507BEBB81EB1B0FF4AC2" : "Apple\/On%20The%20Map\/Learning%20Projects\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "On The Map",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "On The Map\/On The Map.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/udacity\/ud421-ios-networking.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BAE1F7A899474A2C4487507BEBB81EB1B0FF4AC2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LithiumLover\/CodeEval.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BEEC795CE130BEB46EB21A58ABC678A915951772"
+    }
+  ]
+}
