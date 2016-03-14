@@ -22,7 +22,6 @@
 		6EDB24441C90FD82006D8F06 /* InfoPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB24431C90FD82006D8F06 /* InfoPostingViewController.swift */; };
 		6EDB24481C91C794006D8F06 /* UdacityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB24471C91C794006D8F06 /* UdacityAPI.swift */; };
 		6EDB244A1C91C79F006D8F06 /* ParseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB24491C91C79F006D8F06 /* ParseAPI.swift */; };
-		6EDB244C1C924757006D8F06 /* InfoPosting2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB244B1C924757006D8F06 /* InfoPosting2ViewController.swift */; };
 		6EDB244E1C933F79006D8F06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB244D1C933F79006D8F06 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +64,6 @@
 		6EDB24431C90FD82006D8F06 /* InfoPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostingViewController.swift; sourceTree = "<group>"; };
 		6EDB24471C91C794006D8F06 /* UdacityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityAPI.swift; sourceTree = "<group>"; };
 		6EDB24491C91C79F006D8F06 /* ParseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPI.swift; sourceTree = "<group>"; };
-		6EDB244B1C924757006D8F06 /* InfoPosting2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPosting2ViewController.swift; sourceTree = "<group>"; };
 		6EDB244D1C933F79006D8F06 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,10 +108,9 @@
 			children = (
 				6E0C7A6F1C8E00CE00C30677 /* LoginViewController.swift */,
 				6E0C7A711C8E00EE00C30677 /* MapViewController.swift */,
-				6EDB24431C90FD82006D8F06 /* InfoPostingViewController.swift */,
-				6EDB244B1C924757006D8F06 /* InfoPosting2ViewController.swift */,
 				6E4C46811C94D4C700DE0DF2 /* ListTableViewController.swift */,
 				6E4C46831C94D77B00DE0DF2 /* ListCell.swift */,
+				6EDB24431C90FD82006D8F06 /* InfoPostingViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -347,7 +344,6 @@
 				6E0C7A721C8E00EE00C30677 /* MapViewController.swift in Sources */,
 				6EDB24441C90FD82006D8F06 /* InfoPostingViewController.swift in Sources */,
 				6E0EC3221C8F71DB00142A35 /* Student.swift in Sources */,
-				6EDB244C1C924757006D8F06 /* InfoPosting2ViewController.swift in Sources */,
 				6EDB244A1C91C79F006D8F06 /* ParseAPI.swift in Sources */,
 				6EDB244E1C933F79006D8F06 /* Constants.swift in Sources */,
 			);

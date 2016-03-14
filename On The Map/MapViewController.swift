@@ -34,8 +34,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func newPin(sender: AnyObject) {
         // push view controller: info posting 1
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("infoPosting") as! InfoPostingViewController
-        self.navigationController!.presentViewController(detailController, animated: true, completion: nil) 
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("infoPosting2") as! InfoPostingViewController
+        self.navigationController!.presentViewController(detailController, animated: true, completion: nil)
     }
     
     @IBAction func refreshButton(sender: AnyObject) {
@@ -54,7 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         })
     }
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? Student {
             let identifier = "pin"
             var view: MKPinAnnotationView

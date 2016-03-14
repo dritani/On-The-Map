@@ -105,6 +105,8 @@ class ParseAPI {
                 return
             }
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+            completion(complete:true)
+            return
         }
         task.resume()
     }

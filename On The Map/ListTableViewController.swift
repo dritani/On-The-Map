@@ -25,7 +25,7 @@ class ListTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     
     @IBAction func newPin(sender: AnyObject) {
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("infoPosting") as! InfoPostingViewController
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("infoPosting2") as! InfoPostingViewController
         self.navigationController!.presentViewController(detailController, animated: true, completion: nil)
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     var students: [Student] = []
     
@@ -21,12 +21,12 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        emailField.delegate = self
+        passwordField.delegate = self
         subscribeToNotification(UIKeyboardWillShowNotification, selector: "keyboardWillShow:")
         subscribeToNotification(UIKeyboardWillHideNotification, selector: "keyboardWillHide:")
         subscribeToNotification(UIKeyboardDidShowNotification, selector: "keyboardDidShow:")
         subscribeToNotification(UIKeyboardDidHideNotification, selector: "keyboardDidHide:")
-        // Do any additional setup after loading the view.
         
     }
 
@@ -57,8 +57,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signUp(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string:"https://www.udacity.com/account/auth#!/signup")!)
-        
+    UIApplication.sharedApplication().openURL(NSURL(string:"https://www.udacity.com/account/auth#!/signup")!)
     }
     
     private func subscribeToNotification(notification: String, selector: Selector) {
