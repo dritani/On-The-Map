@@ -1,9 +1,9 @@
 //
 //  GCDBlackBox.swift
-//  FlickFinder
+//  On The Map
 //
-//  Created by Jarrod Parkes on 11/5/15.
-//  Copyright © 2015 Udacity. All rights reserved.
+//  Created by Dritani on 2016-03-14.
+//  Copyright © 2016 AquariusLB. All rights reserved.
 //
 
 import Foundation

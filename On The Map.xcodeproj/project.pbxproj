@@ -18,11 +18,11 @@
 		6E6F4CFD1C6A31D500086223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6F4CFB1C6A31D500086223 /* LaunchScreen.storyboard */; };
 		6E6F4D081C6A31D500086223 /* On_The_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6F4D071C6A31D500086223 /* On_The_MapTests.swift */; };
 		6E6F4D131C6A31D500086223 /* On_The_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6F4D121C6A31D500086223 /* On_The_MapUITests.swift */; };
-		6EC3179B1C8FC430009EBBA8 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC3179A1C8FC430009EBBA8 /* GCDBlackBox.swift */; };
 		6EDB24441C90FD82006D8F06 /* InfoPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB24431C90FD82006D8F06 /* InfoPostingViewController.swift */; };
 		6EDB24481C91C794006D8F06 /* UdacityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB24471C91C794006D8F06 /* UdacityAPI.swift */; };
 		6EDB244A1C91C79F006D8F06 /* ParseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB24491C91C79F006D8F06 /* ParseAPI.swift */; };
 		6EDB244E1C933F79006D8F06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB244D1C933F79006D8F06 /* Constants.swift */; };
+		6EE1528E1C971D180054DB90 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1528D1C971D180054DB90 /* GCDBlackBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +60,11 @@
 		6E6F4D0E1C6A31D500086223 /* On The MapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On The MapUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6F4D121C6A31D500086223 /* On_The_MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_The_MapUITests.swift; sourceTree = "<group>"; };
 		6E6F4D141C6A31D500086223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6EC3179A1C8FC430009EBBA8 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = "Learning Projects/Lesson 3 - MyFavoriteMoviesComplete/MyFavoriteMovies/GCDBlackBox.swift"; sourceTree = SOURCE_ROOT; };
 		6EDB24431C90FD82006D8F06 /* InfoPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostingViewController.swift; sourceTree = "<group>"; };
 		6EDB24471C91C794006D8F06 /* UdacityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityAPI.swift; sourceTree = "<group>"; };
 		6EDB24491C91C79F006D8F06 /* ParseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPI.swift; sourceTree = "<group>"; };
 		6EDB244D1C933F79006D8F06 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6EE1528D1C971D180054DB90 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = ../GCDBlackBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				6E6F4CF21C6A31D500086223 /* AppDelegate.swift */,
-				6EC3179A1C8FC430009EBBA8 /* GCDBlackBox.swift */,
+				6EE1528D1C971D180054DB90 /* GCDBlackBox.swift */,
 				6EDB24471C91C794006D8F06 /* UdacityAPI.swift */,
 				6EDB24491C91C79F006D8F06 /* ParseAPI.swift */,
 			);
@@ -335,11 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EC3179B1C8FC430009EBBA8 /* GCDBlackBox.swift in Sources */,
 				6E0C7A701C8E00CE00C30677 /* LoginViewController.swift in Sources */,
 				6E6F4CF31C6A31D500086223 /* AppDelegate.swift in Sources */,
 				6E4C46841C94D77B00DE0DF2 /* ListCell.swift in Sources */,
 				6EDB24481C91C794006D8F06 /* UdacityAPI.swift in Sources */,
+				6EE1528E1C971D180054DB90 /* GCDBlackBox.swift in Sources */,
 				6E4C46821C94D4C700DE0DF2 /* ListTableViewController.swift in Sources */,
 				6E0C7A721C8E00EE00C30677 /* MapViewController.swift in Sources */,
 				6EDB24441C90FD82006D8F06 /* InfoPostingViewController.swift in Sources */,
