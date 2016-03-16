@@ -10,12 +10,14 @@ import UIKit
 
 class ListTableViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
-    let applicationDelegate =  (UIApplication.sharedApplication().delegate as! AppDelegate)
+
     
     @IBOutlet var theTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
     }
     
     @IBAction func logoutButton(sender: AnyObject) {
@@ -30,9 +32,9 @@ class ListTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     
     @IBAction func refreshButton(sender: AnyObject) {
-        applicationDelegate.students.removeAll()
+        StudentList.sharedInstance().students.removeAll()
         theTable.reloadData()
-        ParseAPI.sharedInstance().parseGet({(complete) in
+        ParseAPI.sharedInstance().parseGet(self,completion: {(complete) in
             dispatch_async(dispatch_get_main_queue(), {
                 if complete == true {
                     self.theTable.reloadData()
@@ -42,22 +44,22 @@ class ListTableViewController: UIViewController,UITableViewDataSource, UITableVi
     }
     
      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return applicationDelegate.students.count
+        return StudentList.sharedInstance().students.count
     }
     
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("student2") as! ListCell
         
-        let student = applicationDelegate.students[indexPath.row]
+        let student = StudentList.sharedInstance().students[indexPath.row]
         
-        cell.studentName.text = student.title
+        cell.studentName.text = "\(student.firstName) \(student.lastName)"
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let student = applicationDelegate.students[indexPath.row]
-        UIApplication.sharedApplication().openURL(NSURL(string: student.subtitle!)!)
+        let student = StudentList.sharedInstance().students[indexPath.row]
+        UIApplication.sharedApplication().openURL(NSURL(string: student.mediaURL)!)
     }
 }

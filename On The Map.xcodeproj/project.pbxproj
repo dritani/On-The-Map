@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		6E0C7A701C8E00CE00C30677 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C7A6F1C8E00CE00C30677 /* LoginViewController.swift */; };
 		6E0C7A721C8E00EE00C30677 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C7A711C8E00EE00C30677 /* MapViewController.swift */; };
-		6E0EC3221C8F71DB00142A35 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EC3211C8F71D800142A35 /* Student.swift */; };
+		6E40E4241C9A0BA400CEA428 /* StudentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40E4231C9A0BA400CEA428 /* StudentList.swift */; };
+		6E40E4261C9A186100CEA428 /* StudentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40E4251C9A186100CEA428 /* StudentAnnotation.swift */; };
 		6E4C46821C94D4C700DE0DF2 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C46811C94D4C700DE0DF2 /* ListTableViewController.swift */; };
 		6E4C46841C94D77B00DE0DF2 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C46831C94D77B00DE0DF2 /* ListCell.swift */; };
 		6E6F4CF31C6A31D500086223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6F4CF21C6A31D500086223 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 		6EDB244A1C91C79F006D8F06 /* ParseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB24491C91C79F006D8F06 /* ParseAPI.swift */; };
 		6EDB244E1C933F79006D8F06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB244D1C933F79006D8F06 /* Constants.swift */; };
 		6EE1528E1C971D180054DB90 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1528D1C971D180054DB90 /* GCDBlackBox.swift */; };
+		6EEE6AAF1C99CB7000860B34 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE6AAE1C99CB7000860B34 /* StudentInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,8 @@
 /* Begin PBXFileReference section */
 		6E0C7A6F1C8E00CE00C30677 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6E0C7A711C8E00EE00C30677 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		6E0EC3211C8F71D800142A35 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		6E40E4231C9A0BA400CEA428 /* StudentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentList.swift; sourceTree = "<group>"; };
+		6E40E4251C9A186100CEA428 /* StudentAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StudentAnnotation.swift; path = ../StudentAnnotation.swift; sourceTree = "<group>"; };
 		6E4C46811C94D4C700DE0DF2 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		6E4C46831C94D77B00DE0DF2 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		6E6F4CEF1C6A31D500086223 /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +68,7 @@
 		6EDB24491C91C79F006D8F06 /* ParseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPI.swift; sourceTree = "<group>"; };
 		6EDB244D1C933F79006D8F06 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6EE1528D1C971D180054DB90 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = ../GCDBlackBox.swift; sourceTree = "<group>"; };
+		6EEE6AAE1C99CB7000860B34 /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,9 @@
 		6E0C7A791C8E019E00C30677 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6E0EC3211C8F71D800142A35 /* Student.swift */,
+				6E40E4251C9A186100CEA428 /* StudentAnnotation.swift */,
+				6EEE6AAE1C99CB7000860B34 /* StudentInformation.swift */,
+				6E40E4231C9A0BA400CEA428 /* StudentList.swift */,
 				6EDB244D1C933F79006D8F06 /* Constants.swift */,
 			);
 			name = Model;
@@ -335,15 +341,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEE6AAF1C99CB7000860B34 /* StudentInformation.swift in Sources */,
 				6E0C7A701C8E00CE00C30677 /* LoginViewController.swift in Sources */,
 				6E6F4CF31C6A31D500086223 /* AppDelegate.swift in Sources */,
 				6E4C46841C94D77B00DE0DF2 /* ListCell.swift in Sources */,
 				6EDB24481C91C794006D8F06 /* UdacityAPI.swift in Sources */,
 				6EE1528E1C971D180054DB90 /* GCDBlackBox.swift in Sources */,
 				6E4C46821C94D4C700DE0DF2 /* ListTableViewController.swift in Sources */,
+				6E40E4241C9A0BA400CEA428 /* StudentList.swift in Sources */,
 				6E0C7A721C8E00EE00C30677 /* MapViewController.swift in Sources */,
+				6E40E4261C9A186100CEA428 /* StudentAnnotation.swift in Sources */,
 				6EDB24441C90FD82006D8F06 /* InfoPostingViewController.swift in Sources */,
-				6E0EC3221C8F71DB00142A35 /* Student.swift in Sources */,
 				6EDB244A1C91C79F006D8F06 /* ParseAPI.swift in Sources */,
 				6EDB244E1C933F79006D8F06 /* Constants.swift in Sources */,
 			);

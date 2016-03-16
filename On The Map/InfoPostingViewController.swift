@@ -24,6 +24,7 @@ class InfoPostingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var theMap: MKMapView!
     @IBOutlet weak var findButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     
     override func viewDidLoad() {
@@ -43,15 +44,18 @@ class InfoPostingViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     @IBAction func findPressed(sender: AnyObject) {
         let coordinates:CLLocationCoordinate2D
         let geocoder = CLGeocoder()
         location = locationField.text!
+        activityIndicator.startAnimating()
         geocoder.geocodeAddressString(location, completionHandler: {(placemarks, error) -> Void in
             if((error) != nil){
                 self.debugField.text = "Error in geocoding."
+                self.activityIndicator.stopAnimating()
             }
             if let placemark = placemarks?.first {
                 var coordinates:CLLocationCoordinate2D!
@@ -61,8 +65,8 @@ class InfoPostingViewController: UIViewController, UITextFieldDelegate {
                 let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinates,
                     regionRadius * 2.0, regionRadius * 2.0)
                 self.theMap.setRegion(coordinateRegion, animated: true)
-                let me = Student(title: "\(Constants.firstName) \(Constants.lastName)",
-                    link: "",
+                let me = StudentAnnotation(title: "\(Constants.firstName) \(Constants.lastName)",
+                    subtitle: "",
                     coordinate: coordinates)
                 self.theMap.addAnnotation(me)
                 self.topLabel.hidden = true
@@ -73,14 +77,14 @@ class InfoPostingViewController: UIViewController, UITextFieldDelegate {
                 self.theMap.hidden = false
                 self.findButton.hidden = true
                 self.submitButton.hidden = false
-                
+                self.activityIndicator.stopAnimating()
                 
             }
         })
     }
     
     @IBAction func submitPressed(sender: AnyObject) {
-        ParseAPI.sharedInstance().parsePost(Constants.uniqueID, firstName: Constants.firstName, lastName: Constants.lastName, mapString: location, URL: linkField.text!, latitude: coordinates.latitude, longitude: coordinates.longitude,completion:({(complete) in
+        ParseAPI.sharedInstance().parsePost(Constants.uniqueID, firstName: Constants.firstName, lastName: Constants.lastName, mapString: location, URL: linkField.text!, latitude: coordinates.latitude, longitude: coordinates.longitude,viewController: self,completion:({(complete) in
             dispatch_async(dispatch_get_main_queue(), {
                 if complete == true {
                     self.dismissViewControllerAnimated(true, completion: nil)

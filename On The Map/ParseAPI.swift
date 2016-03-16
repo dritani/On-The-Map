@@ -17,9 +17,9 @@ class ParseAPI {
         return sharedParse
     }
     
-    func parseGet(completion: (complete:Bool)->Void) {
+    func parseGet(viewController: UIViewController, completion: (complete:Bool)->Void) {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://api.parse.com/1/classes/StudentLocation")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://api.parse.com/1/classes/StudentLocation?order=-updatedAt")!)
         request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
         let session = NSURLSession.sharedSession()
@@ -27,6 +27,7 @@ class ParseAPI {
             func displayError(error: String) {
                 print(error)
                 performUIUpdatesOnMain {
+                    self.alert("The download failed.", viewController: viewController)
                     print("Login Failed (Request Token).")
                 }
             }
@@ -68,16 +69,18 @@ class ParseAPI {
                 
                 for i in 0...99 {
                     let result = results[i]
+                    let newStudent = StudentInformation(dictionary: result)
+                    StudentList.sharedInstance().students.append(newStudent)
                     
-                    let fullName = (result["firstName"] as! String)  + " " + (result["lastName"] as! String)
-                    let link = result["mediaURL"] as! String
-                    let coordinate = CLLocationCoordinate2D(latitude: result["latitude"] as! Double, longitude: result["longitude"] as! Double)
-                    
-                    let student = Student(title: fullName, link: link, coordinate: coordinate)
-                    
-                    
-                    let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-                    applicationDelegate.students.append(student)
+//                    let fullName = (result["firstName"] as! String)  + " " + (result["lastName"] as! String)
+//                    let link = result["mediaURL"] as! String
+//                    let coordinate = CLLocationCoordinate2D(latitude: result["latitude"] as! Double, longitude: result["longitude"] as! Double)
+//                    
+//                    let student = Student(title: fullName, link: link, coordinate: coordinate)
+//                    
+//                    
+//                    let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+//                    applicationDelegate.students.append(student)
 
                 }
                 
@@ -91,7 +94,7 @@ class ParseAPI {
         task.resume()
     }
     
-    func parsePost(uniqueID: String, firstName: String, lastName: String, mapString: String, URL: String, latitude: Double, longitude: Double, completion: (complete:Bool)->Void) {
+    func parsePost(uniqueID: String, firstName: String, lastName: String, mapString: String, URL: String, latitude: Double, longitude: Double, viewController: UIViewController, completion: (complete:Bool)->Void) {
         
         let request = NSMutableURLRequest(URL: NSURL(string: "https://api.parse.com/1/classes/StudentLocation")!)
         request.HTTPMethod = "POST"
@@ -102,6 +105,10 @@ class ParseAPI {
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
             if error != nil { // Handle error…
+                performUIUpdatesOnMain {
+                    self.alert("Posting failed.", viewController: viewController)
+                }
+
                 return
             }
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
@@ -110,4 +117,25 @@ class ParseAPI {
         }
         task.resume()
     }
+    
+    func alert(message: String, viewController: UIViewController) {
+        
+        let alertController = UIAlertController(title: "Error", message: "\(message)", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            // ...
+        }
+        alertController.addAction(OKAction)
+        
+        viewController.presentViewController(alertController, animated: true) {
+            // ...
+        }
+        
+    }
+    
 }

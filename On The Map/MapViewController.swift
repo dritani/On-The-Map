@@ -12,7 +12,7 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     var posted:Bool = false
-    let applicationDelegate =  (UIApplication.sharedApplication().delegate as! AppDelegate)
+
     
     @IBOutlet weak var theMap: MKMapView!
     
@@ -22,7 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             refreshMap()
         }
         theMap.delegate = self
-        theMap.addAnnotations(applicationDelegate.students)
+        addAnnotations()
     }
 
     @IBAction func logoutButton(sender: AnyObject) {
@@ -43,19 +43,27 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func refreshMap() {
-        applicationDelegate.students.removeAll()
+        StudentList.sharedInstance().students.removeAll()
         theMap.removeAnnotations(theMap.annotations)
-        ParseAPI.sharedInstance().parseGet({(complete) in
+        ParseAPI.sharedInstance().parseGet(self,completion: {(complete) in
             dispatch_async(dispatch_get_main_queue(), {
                 if complete == true {
-                    self.theMap.addAnnotations(self.applicationDelegate.students)
+                    self.addAnnotations()
                 }
             })
         })
     }
     
+    func addAnnotations() {
+        for student in StudentList.sharedInstance().students {
+            var annotation: StudentAnnotation
+            annotation = StudentAnnotation(title: "\(student.firstName) \(student.lastName)", subtitle: student.mediaURL, coordinate: CLLocationCoordinate2D(latitude: student.latitude, longitude: student.longitude))
+            theMap.addAnnotation(annotation)
+        }
+    }
+    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? Student {
+        if let annotation = annotation as? StudentAnnotation {
             let identifier = "pin"
             var view: MKPinAnnotationView
             if let dequeuedView = theMap.dequeueReusableAnnotationViewWithIdentifier(identifier)
@@ -77,7 +85,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let student = view.annotation as! Student
+        let student = view.annotation as! StudentAnnotation
         UIApplication.sharedApplication().openURL(NSURL(string: student.subtitle!)!)
     }
 }

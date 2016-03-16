@@ -40,10 +40,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             print("Username or Password Empty.")
         } else {
 
-            UdacityAPI.sharedInstance().udacityLogin(emailField.text!, password: passwordField.text!, completion: {
+            UdacityAPI.sharedInstance().udacityLogin(emailField.text!, password: passwordField.text!, viewController: self, completion: {
                 (complete) in
                 if (complete != nil) {
-                    ParseAPI.sharedInstance().parseGet({(complete) in
+                    ParseAPI.sharedInstance().parseGet(self,completion: {(complete) in
                         dispatch_async(dispatch_get_main_queue(), {
                             if complete == true {
                                 self.performSegueWithIdentifier("afterLogin", sender: self)

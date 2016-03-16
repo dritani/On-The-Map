@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 private let sharedUdacity = UdacityAPI()
 
@@ -16,7 +17,7 @@ class UdacityAPI {
         return sharedUdacity
     }
     
-    func udacityLogin(email:String, password:String, completion: (complete: Bool?) -> Void) {
+    func udacityLogin(email:String, password:String, viewController: UIViewController, completion: (complete: Bool?) -> Void) {
         
     
     let request = NSMutableURLRequest(URL: NSURL(string: "https://www.udacity.com/api/session")!)
@@ -37,12 +38,22 @@ class UdacityAPI {
         
         /* GUARD: Was there an error? */
         guard (error == nil) else {
+            
+            performUIUpdatesOnMain {
+                self.alert("The connection failed.", viewController: viewController)
+            }
+            
             displayError("There was an error with your request: \(error)")
             return
         }
         
         /* GUARD: Did we get a successful 2XX response? */
         guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+            performUIUpdatesOnMain {
+                self.alert("You've entered the wrong credentials.", viewController: viewController)
+            }
+            
+
             displayError("Your request returned a status code other than 2xx!")
             return
         }
@@ -93,5 +104,25 @@ class UdacityAPI {
             print(NSString(data: newData, encoding: NSUTF8StringEncoding))
         }
         task.resume()
+    }
+    
+    func alert(message: String, viewController: UIViewController) {
+        
+        let alertController = UIAlertController(title: "Error", message: "\(message)", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            // ...
+        }
+        alertController.addAction(OKAction)
+        
+        viewController.presentViewController(alertController, animated: true) {
+            // ...
+        }
+        
     }
 }
