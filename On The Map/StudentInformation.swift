@@ -22,8 +22,8 @@ struct StudentInformation {
     init(dictionary: [String: AnyObject]) {
         firstName = dictionary["firstName"] as! String
         lastName = dictionary["lastName"] as! String
-        latitude = dictionary["latitude"] as! Float
-        longitude = dictionary["longitude"] as! Float
+        latitude = dictionary["latitude"] as! Double
+        longitude = dictionary["longitude"] as! Double
         mapString = dictionary["mapString"] as! String
         mediaURL = dictionary["mediaURL"] as! String
         objectID = dictionary["objectID"] as! String

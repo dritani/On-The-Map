@@ -11,7 +11,6 @@ import MapKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    var students: [Student] = []
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
