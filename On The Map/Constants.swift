@@ -10,8 +10,8 @@ import Foundation
 
 struct Constants {
     
-    static let firstName = "Dr"
-    static let lastName = "H"
+    static var firstName = "Dr"
+    static var lastName = "H"
     static var uniqueID = "777777"
 
  

@@ -70,7 +70,7 @@ class UdacityAPI {
         do {
             parsedResult = try NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments)
         } catch {
-            displayError("Could not parse the data as JSON: '\(data)'")
+            displayError("Could not parse the data as JSON: '\(newData)'")
             return
         }
         
@@ -82,6 +82,35 @@ class UdacityAPI {
         }
 
     task.resume()
+        
+    }
+    
+    func udacityGet(completion: (complete:Bool?)->Void) {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://www.udacity.com/api/users/\(Constants.uniqueID)")!)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            if error != nil { // Handle error...
+                return
+            }
+            let newData = data!.subdataWithRange(NSMakeRange(5, data!.length - 5)) /* subset response data! */
+            print(NSString(data: newData, encoding: NSUTF8StringEncoding))
+            
+            let parsedResult: AnyObject!
+            
+            do {
+                parsedResult = try NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments)
+            } catch {
+                print("Could not parse the data as JSON: '\(newData)'")
+                return
+            }
+            let user = parsedResult["user"] as? [String:AnyObject]
+            Constants.lastName = (user!["last_name"] as? String)!
+            Constants.firstName = (user!["first_name"] as? String)!
+            completion(complete:true)
+            return
+        }
+        task.resume()
         
     }
 

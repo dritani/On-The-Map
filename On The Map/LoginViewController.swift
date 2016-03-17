@@ -42,13 +42,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             UdacityAPI.sharedInstance().udacityLogin(emailField.text!, password: passwordField.text!, viewController: self, completion: {
                 (complete) in
                 if (complete != nil) {
-                    ParseAPI.sharedInstance().parseGet(self,completion: {(complete) in
-                        dispatch_async(dispatch_get_main_queue(), {
-                            if complete == true {
-                                self.performSegueWithIdentifier("afterLogin", sender: self)
-                            }
-                        })
+                    UdacityAPI.sharedInstance().udacityGet({(complete) in
+                        if (complete != nil) {
+                            ParseAPI.sharedInstance().parseGet(self,completion: {(complete) in
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    if complete == true {
+                                        self.performSegueWithIdentifier("afterLogin", sender: self)
+                                    }
+                                })
+                            })
+                        }
                     })
+
                 }
             })
         }
