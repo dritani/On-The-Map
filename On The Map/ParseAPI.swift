@@ -65,12 +65,12 @@ class ParseAPI {
             }
             
             performUIUpdatesOnMain {
-                var student: Student
+                var student: StudentInformation
                 
                 for i in 0...99 {
                     let result = results[i]
-                    let newStudent = StudentInformation(dictionary: result)
-                    StudentList.sharedInstance().students.append(newStudent)
+                    let student = StudentInformation(dictionary: result)
+                    StudentList.sharedInstance().students.append(student)
                     
 //                    let fullName = (result["firstName"] as! String)  + " " + (result["lastName"] as! String)
 //                    let link = result["mediaURL"] as! String
