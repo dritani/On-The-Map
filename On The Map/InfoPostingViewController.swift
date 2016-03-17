@@ -29,6 +29,7 @@ class InfoPostingViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityIndicator.hidden = true
         locationField.delegate = self
         linkField.delegate = self
         subscribeToNotification(UIKeyboardWillShowNotification, selector: "keyboardWillShow:")
@@ -48,14 +49,16 @@ class InfoPostingViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func findPressed(sender: AnyObject) {
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
         let coordinates:CLLocationCoordinate2D
         let geocoder = CLGeocoder()
         location = locationField.text!
-        activityIndicator.startAnimating()
         geocoder.geocodeAddressString(location, completionHandler: {(placemarks, error) -> Void in
             if((error) != nil){
                 self.debugField.text = "Error in geocoding."
                 self.activityIndicator.stopAnimating()
+                self.activityIndicator.hidden = true
             }
             if let placemark = placemarks?.first {
                 var coordinates:CLLocationCoordinate2D!
@@ -78,6 +81,7 @@ class InfoPostingViewController: UIViewController, UITextFieldDelegate {
                 self.findButton.hidden = true
                 self.submitButton.hidden = false
                 self.activityIndicator.stopAnimating()
+                self.activityIndicator.hidden = true
                 
             }
         })

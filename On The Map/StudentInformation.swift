@@ -17,7 +17,6 @@ struct StudentInformation {
     var longitude: Double
     var mapString: String
     var mediaURL: String
-    var objectID: String
     
     init(dictionary: [String: AnyObject]) {
         firstName = dictionary["firstName"] as! String
@@ -26,7 +25,6 @@ struct StudentInformation {
         longitude = dictionary["longitude"] as! Double
         mapString = dictionary["mapString"] as! String
         mediaURL = dictionary["mediaURL"] as! String
-        objectID = dictionary["objectID"] as! String
    }
     
 }

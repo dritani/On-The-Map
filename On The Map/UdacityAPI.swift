@@ -74,6 +74,8 @@ class UdacityAPI {
             return
         }
         
+        let account = parsedResult["account"] as? [String:AnyObject]
+        Constants.uniqueID = (account!["key"] as? String)!
         completion(complete:true)
         return
         

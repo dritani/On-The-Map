@@ -373,22 +373,20 @@
                             <constraint firstAttribute="leadingMargin" secondItem="9aV-8I-lDx" secondAttribute="leading" id="HVI-Rz-bb0"/>
                             <constraint firstItem="Qr6-JF-Cy6" firstAttribute="top" secondItem="GdL-Zw-CJk" secondAttribute="bottom" constant="71" id="JG4-ON-ekl"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4Q6-sm-MXP" secondAttribute="leading" id="UGX-17-2ok"/>
-                            <constraint firstItem="KFi-Hj-TQQ" firstAttribute="leading" secondItem="xuv-ac-XQO" secondAttribute="leadingMargin" constant="170" id="Uyq-rE-u6l"/>
                             <constraint firstItem="3JQ-ro-96m" firstAttribute="top" secondItem="dXj-ls-NfJ" secondAttribute="bottom" constant="186" id="XNv-5l-Mny"/>
                             <constraint firstItem="kHA-4n-tMh" firstAttribute="leading" secondItem="xuv-ac-XQO" secondAttribute="leadingMargin" constant="-20" id="Z29-2f-h8G"/>
                             <constraint firstItem="zpR-0d-bCg" firstAttribute="top" secondItem="dXj-ls-NfJ" secondAttribute="bottom" constant="81" id="cxR-f6-AMW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K7p-WE-Z2K" secondAttribute="trailing" id="cyk-Ye-0JJ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3JQ-ro-96m" secondAttribute="leading" id="dQt-dm-vQ8"/>
+                            <constraint firstItem="4Q6-sm-MXP" firstAttribute="top" secondItem="KFi-Hj-TQQ" secondAttribute="bottom" constant="9" id="ejz-IB-Sim"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GdL-Zw-CJk" secondAttribute="trailing" id="fBs-ib-KT0"/>
+                            <constraint firstItem="KFi-Hj-TQQ" firstAttribute="centerX" secondItem="xuv-ac-XQO" secondAttribute="centerX" id="hAU-vp-Tky"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zpR-0d-bCg" secondAttribute="trailing" id="iec-0V-z12"/>
-                            <constraint firstItem="KFi-Hj-TQQ" firstAttribute="top" secondItem="3JQ-ro-96m" secondAttribute="bottom" id="lT5-t3-jpF"/>
-                            <constraint firstItem="4Q6-sm-MXP" firstAttribute="top" secondItem="KFi-Hj-TQQ" secondAttribute="bottom" constant="9" id="oS5-Dh-y55"/>
                             <constraint firstItem="K7p-WE-Z2K" firstAttribute="top" secondItem="dXj-ls-NfJ" secondAttribute="bottom" constant="110" id="riE-pu-DcO"/>
                             <constraint firstItem="4Q6-sm-MXP" firstAttribute="top" secondItem="dXj-ls-NfJ" secondAttribute="bottom" constant="215" id="ryr-dY-OYq"/>
                             <constraint firstAttribute="leadingMargin" secondItem="GdL-Zw-CJk" secondAttribute="leading" id="sAo-hy-3YR"/>
                             <constraint firstItem="Qr6-JF-Cy6" firstAttribute="top" secondItem="4Q6-sm-MXP" secondAttribute="bottom" constant="109" id="uvh-G5-eH4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E58-SP-0mU" secondAttribute="trailing" id="wao-7s-OQu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KFi-Hj-TQQ" secondAttribute="trailing" constant="170" id="yHb-tl-V9A"/>
                             <constraint firstItem="9aV-8I-lDx" firstAttribute="top" secondItem="dXj-ls-NfJ" secondAttribute="bottom" constant="148" id="zOM-mn-ul6"/>
                         </constraints>
                         <variation key="default">
@@ -421,11 +419,9 @@
                                 <exclude reference="dQt-dm-vQ8"/>
                                 <exclude reference="4Zy-aP-IpF"/>
                                 <exclude reference="UGX-17-2ok"/>
-                                <exclude reference="oS5-Dh-y55"/>
+                                <exclude reference="ejz-IB-Sim"/>
                                 <exclude reference="ryr-dY-OYq"/>
-                                <exclude reference="Uyq-rE-u6l"/>
-                                <exclude reference="lT5-t3-jpF"/>
-                                <exclude reference="yHb-tl-V9A"/>
+                                <exclude reference="hAU-vp-Tky"/>
                                 <exclude reference="fBs-ib-KT0"/>
                                 <exclude reference="sAo-hy-3YR"/>
                                 <exclude reference="C3A-9A-kXI"/>
@@ -465,11 +461,9 @@
                                 <include reference="dQt-dm-vQ8"/>
                                 <include reference="4Zy-aP-IpF"/>
                                 <include reference="UGX-17-2ok"/>
-                                <include reference="oS5-Dh-y55"/>
+                                <include reference="ejz-IB-Sim"/>
                                 <include reference="ryr-dY-OYq"/>
-                                <include reference="Uyq-rE-u6l"/>
-                                <include reference="lT5-t3-jpF"/>
-                                <include reference="yHb-tl-V9A"/>
+                                <include reference="hAU-vp-Tky"/>
                                 <include reference="fBs-ib-KT0"/>
                                 <include reference="sAo-hy-3YR"/>
                                 <include reference="C3A-9A-kXI"/>

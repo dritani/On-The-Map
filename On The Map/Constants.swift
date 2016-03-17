@@ -12,6 +12,7 @@ struct Constants {
     
     static let firstName = "Dr"
     static let lastName = "H"
-    static let uniqueID = "777777"
-    
+    static var uniqueID = "777777"
+
+ 
 }
